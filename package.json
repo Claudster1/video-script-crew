@@ -5,11 +5,14 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node --experimental-modules server.js",
+    "start": "node server.js",
     "dev": "nodemon server.js",
     "prod": "pm2 start server.js --name video-script-crew",
     "stop": "pm2 stop video-script-crew",
     "restart": "pm2 restart video-script-crew"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.3",
