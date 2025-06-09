@@ -16,9 +16,9 @@ services:
   - key: PORT
     value: "8080"
   - key: SUPABASE_URL
-    value: "https://jmyjdnigxbrntsvkdwxp.supabase.co"
+    type: SECRET
   - key: SUPABASE_KEY
-    value: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpteWpkbmlneGJybnRzdmtkd3hwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk0OTAxNDQsImV4cCI6MjA2NTA2NjE0NH0.-jmO7HpgjAAt9_9nB-Q7o68xnXAHS9LoicwBqgyPwHI"
+    type: SECRET
   health_check:
     http_path: /
     initial_delay_seconds: 30

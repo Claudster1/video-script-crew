@@ -1,9 +1,9 @@
-import express from 'express';
-import multer from 'multer';
-import cors from 'cors';
-import path from 'path';
-import fs from 'fs';
-import { supabase } from './supabase-config.js';
+const express = require('express');
+const multer = require('multer');
+const cors = require('cors');
+const path = require('path');
+const fs = require('fs');
+const { supabase } = require('./supabase-config.js');
 
 const app = express();
 const port = process.env.PORT || 3000;

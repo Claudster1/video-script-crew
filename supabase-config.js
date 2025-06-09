@@ -1,13 +1,18 @@
 // Import required modules
-import { createClient } from '@supabase/supabase-js'
-import dotenv from 'dotenv'
+const { createClient } = require('@supabase/supabase-js')
+const dotenv = require('dotenv')
 
 // Load environment variables
 dotenv.config()
 
 // Initialize Supabase client
-const supabaseUrl = 'https://jmyjdnigxbrntsvkdwxp.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpteWpkbmlneGJybnRzdmtkd3hwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk0OTAxNDQsImV4cCI6MjA2NTA2NjE0NH0.-jmO7HpgjAAt9_9nB-Q7o68xnXAHS9LoicwBqgyPwHI'
+const supabaseUrl = process.env.SUPABASE_URL
+const supabaseKey = process.env.SUPABASE_KEY
+
+if (!supabaseUrl || !supabaseKey) {
+    throw new Error('Missing required environment variables: SUPABASE_URL and SUPABASE_KEY must be set')
+}
+
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 // Test the connection
@@ -22,4 +27,4 @@ async function testConnection() {
 }
 
 // Export the client and test function
-export { supabase, testConnection } 
+module.exports = { supabase, testConnection } 
