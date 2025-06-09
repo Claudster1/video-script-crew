@@ -157,4 +157,9 @@ app.use((err, req, res, next) => {
 // Start server
 app.listen(port, () => {
     console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode at http://localhost:${port}`);
+});
+
+// Basic route for the root URL
+app.get('/', (req, res) => {
+    res.send('Video Script Crew API is running!');
 }); 
